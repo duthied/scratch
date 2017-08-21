@@ -1,0 +1,10 @@
+source 'https://rubygems.org'
+
+# Sinatra
+gem 'sinatra'  
+gem 'puma'  
+gem 'rack-conneg'
+
+# Roar/Representable
+gem 'roar'  
+gem 'multi_json'

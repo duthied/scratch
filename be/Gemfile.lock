@@ -1,0 +1,39 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    declarative (0.0.9)
+    declarative-option (0.1.0)
+    multi_json (1.12.1)
+    mustermann (1.0.0)
+    puma (3.10.0)
+    rack (2.0.3)
+    rack-conneg (0.1.6)
+      rack (>= 1.0)
+    rack-protection (2.0.0)
+      rack
+    representable (3.0.4)
+      declarative (< 0.1.0)
+      declarative-option (< 0.2.0)
+      uber (< 0.2.0)
+    roar (1.1.0)
+      representable (~> 3.0.0)
+    sinatra (2.0.0)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.0)
+      tilt (~> 2.0)
+    tilt (2.0.8)
+    uber (0.1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  multi_json
+  puma
+  rack-conneg
+  roar
+  sinatra
+
+BUNDLED WITH
+   1.15.4
