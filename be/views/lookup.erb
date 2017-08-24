@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Shortlink It</title>
+    <title>Shortlink App</title>
     <link href="<%= url('/css/style.css') %>" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div class="container">
-        <h1>shortlink it</h1>
-        <form method="post" action="/shortcode">
+        <h1>lookup shortlink</h1>
+        <form method="post">
             <input type="text" value="<%= h(params[:url]) %>" name="url" id="url" />
-            <input type="submit" value="shorten" id="submit" />
+            <input type="submit" value="lookup" id="submit" />
         </form>
         <div class="clear"></div>
-        <% if @shortcode %>
+        <% if @url %>
         <div class="result">
-            Your shortened URL is:
-            <a href="http://<%= @host_with_port %>/<%= @shortcode %>">http://<%= @host_with_port %>/<%= @shortcode %></a>
+            I found this:
+            <a href="<%= @url %>">http://<%= @url %></a>
         </div>
         <% end %>
     </div>

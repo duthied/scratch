@@ -32,8 +32,7 @@ get '/' do
 	erb :index
 end
 
-post '/' do
-
+post '/shortcode' do
 	@host_with_port = request.host_with_port
 	if params[:url] and not params[:url].empty?
 		@shortcode = random_string 5
@@ -42,8 +41,18 @@ post '/' do
 	erb :index
 end
 
-get '/:shortcode' do
+get '/shortcode/:shortcode' do
 	@host_with_port = request.host_with_port
 	@url = redis.get "links:#{params[:shortcode]}"
 	redirect @url || '/'
 end
+
+get '/lookup' do
+	erb :lookup
+end
+
+post '/lookup' do
+	@url = redis.get "links:#{params[:url]}"
+	erb :lookup
+end
+
