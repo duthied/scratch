@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+ name: scratch-stack
+spec:
+ replicas: 2
+ template:
+   metadata:
+     labels:
+       app: web
+   spec:
+     spec:
+     containers:
+     - image: gcr.io/cafejournal-1031/be:latest
+       imagePullPolicy: Always
+       name: be
+       ports:
+       - containerPort: 4567
+         protocol: TCP
+     - image: gcr.io/cafejournal-1031/fe:latest
+       imagePullPolicy: Always
+       name: fe
+       ports:
+       - containerPort: 80
+         protocol: TCP

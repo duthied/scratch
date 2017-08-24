@@ -1,0 +1,498 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      kubernetes.io/created-by: |
+        {"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicaSet","namespace":"default","name":"be-3631091649","uid":"7a8f3101-86e5-11e7-97b1-0800270d2ab4","apiVersion":"extensions","resourceVersion":"321953"}}
+    creationTimestamp: 2017-08-22T02:56:22Z
+    generateName: be-3631091649-
+    labels:
+      pod-template-hash: "3631091649"
+      run: be
+    name: be-3631091649-cmv0r
+    namespace: default
+    ownerReferences:
+    - apiVersion: extensions/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: be-3631091649
+      uid: 7a8f3101-86e5-11e7-97b1-0800270d2ab4
+    resourceVersion: "321972"
+    selfLink: /api/v1/namespaces/default/pods/be-3631091649-cmv0r
+    uid: 7a910c2b-86e5-11e7-97b1-0800270d2ab4
+  spec:
+    containers:
+    - image: gcr.io/cafejournal-1031/be:latest
+      imagePullPolicy: Always
+      name: be
+      ports:
+      - containerPort: 4567
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-v0x7j
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    nodeName: minikube
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    volumes:
+    - name: default-token-v0x7j
+      secret:
+        defaultMode: 420
+        secretName: default-token-v0x7j
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2017-08-22T02:56:22Z
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: 2017-08-22T02:56:24Z
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: 2017-08-22T02:56:22Z
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://78b6d87ce921411094be227e117cad73967230366a2a387c7224769a20a91475
+      image: gcr.io/cafejournal-1031/be:latest
+      imageID: docker://sha256:326a133549a8de8d1d3b8a84285e6bce96bda899cae811fc2090be3c1c682d8f
+      lastState: {}
+      name: be
+      ready: true
+      restartCount: 0
+      state:
+        running:
+          startedAt: 2017-08-22T02:56:24Z
+    hostIP: 192.168.99.100
+    phase: Running
+    podIP: 172.17.0.5
+    qosClass: BestEffort
+    startTime: 2017-08-22T02:56:22Z
+- apiVersion: v1
+  kind: Pod
+  metadata:
+    annotations:
+      kubernetes.io/created-by: |
+        {"kind":"SerializedReference","apiVersion":"v1","reference":{"kind":"ReplicaSet","namespace":"default","name":"fe-2336624479","uid":"aa81a5db-86e3-11e7-97b1-0800270d2ab4","apiVersion":"extensions","resourceVersion":"321072"}}
+    creationTimestamp: 2017-08-22T02:43:23Z
+    generateName: fe-2336624479-
+    labels:
+      pod-template-hash: "2336624479"
+      run: fe
+    name: fe-2336624479-kfnsn
+    namespace: default
+    ownerReferences:
+    - apiVersion: extensions/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: ReplicaSet
+      name: fe-2336624479
+      uid: aa81a5db-86e3-11e7-97b1-0800270d2ab4
+    resourceVersion: "321091"
+    selfLink: /api/v1/namespaces/default/pods/fe-2336624479-kfnsn
+    uid: aa8284a0-86e3-11e7-97b1-0800270d2ab4
+  spec:
+    containers:
+    - image: gcr.io/cafejournal-1031/fe:latest
+      imagePullPolicy: Always
+      name: fe
+      ports:
+      - containerPort: 80
+        protocol: TCP
+      resources: {}
+      terminationMessagePath: /dev/termination-log
+      terminationMessagePolicy: File
+      volumeMounts:
+      - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+        name: default-token-v0x7j
+        readOnly: true
+    dnsPolicy: ClusterFirst
+    nodeName: minikube
+    restartPolicy: Always
+    schedulerName: default-scheduler
+    securityContext: {}
+    serviceAccount: default
+    serviceAccountName: default
+    terminationGracePeriodSeconds: 30
+    volumes:
+    - name: default-token-v0x7j
+      secret:
+        defaultMode: 420
+        secretName: default-token-v0x7j
+  status:
+    conditions:
+    - lastProbeTime: null
+      lastTransitionTime: 2017-08-22T02:43:23Z
+      status: "True"
+      type: Initialized
+    - lastProbeTime: null
+      lastTransitionTime: 2017-08-22T02:43:26Z
+      status: "True"
+      type: Ready
+    - lastProbeTime: null
+      lastTransitionTime: 2017-08-22T02:43:23Z
+      status: "True"
+      type: PodScheduled
+    containerStatuses:
+    - containerID: docker://862cf2a83a720136851b9d51b3bb5f1c0a7eabaddbf1352a9623b682e8f26003
+      image: gcr.io/cafejournal-1031/fe:latest
+      imageID: docker://sha256:fd784aa55eefc54267dd408ab830dbb700c1069af0712f9f6fc9e58b97791ed2
+      lastState: {}
+      name: fe
+      ready: true
+      restartCount: 0
+      state:
+        running:
+          startedAt: 2017-08-22T02:43:25Z
+    hostIP: 192.168.99.100
+    phase: Running
+    podIP: 172.17.0.4
+    qosClass: BestEffort
+    startTime: 2017-08-22T02:43:23Z
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: 2017-08-22T02:56:21Z
+    generation: 1
+    labels:
+      run: be
+    name: be
+    namespace: default
+    resourceVersion: "321974"
+    selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/be
+    uid: 7a8ea229-86e5-11e7-97b1-0800270d2ab4
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        run: be
+    strategy:
+      rollingUpdate:
+        maxSurge: 1
+        maxUnavailable: 1
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          run: be
+      spec:
+        containers:
+        - image: gcr.io/cafejournal-1031/be:latest
+          imagePullPolicy: Always
+          name: be
+          ports:
+          - containerPort: 4567
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    conditions:
+    - lastTransitionTime: 2017-08-22T02:56:22Z
+      lastUpdateTime: 2017-08-22T02:56:22Z
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+    updatedReplicas: 1
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    annotations:
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: 2017-08-22T02:43:23Z
+    generation: 1
+    labels:
+      run: fe
+    name: fe
+    namespace: default
+    resourceVersion: "321093"
+    selfLink: /apis/extensions/v1beta1/namespaces/default/deployments/fe
+    uid: aa8143a9-86e3-11e7-97b1-0800270d2ab4
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        run: fe
+    strategy:
+      rollingUpdate:
+        maxSurge: 1
+        maxUnavailable: 1
+      type: RollingUpdate
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          run: fe
+      spec:
+        containers:
+        - image: gcr.io/cafejournal-1031/fe:latest
+          imagePullPolicy: Always
+          name: fe
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    conditions:
+    - lastTransitionTime: 2017-08-22T02:43:23Z
+      lastUpdateTime: 2017-08-22T02:43:23Z
+      message: Deployment has minimum availability.
+      reason: MinimumReplicasAvailable
+      status: "True"
+      type: Available
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+    updatedReplicas: 1
+- apiVersion: extensions/v1beta1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: 2017-08-22T02:56:21Z
+    generation: 1
+    labels:
+      pod-template-hash: "3631091649"
+      run: be
+    name: be-3631091649
+    namespace: default
+    ownerReferences:
+    - apiVersion: extensions/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: be
+      uid: 7a8ea229-86e5-11e7-97b1-0800270d2ab4
+    resourceVersion: "321973"
+    selfLink: /apis/extensions/v1beta1/namespaces/default/replicasets/be-3631091649
+    uid: 7a8f3101-86e5-11e7-97b1-0800270d2ab4
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        pod-template-hash: "3631091649"
+        run: be
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          pod-template-hash: "3631091649"
+          run: be
+      spec:
+        containers:
+        - image: gcr.io/cafejournal-1031/be:latest
+          imagePullPolicy: Always
+          name: be
+          ports:
+          - containerPort: 4567
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: extensions/v1beta1
+  kind: ReplicaSet
+  metadata:
+    annotations:
+      deployment.kubernetes.io/desired-replicas: "1"
+      deployment.kubernetes.io/max-replicas: "2"
+      deployment.kubernetes.io/revision: "1"
+    creationTimestamp: 2017-08-22T02:43:23Z
+    generation: 1
+    labels:
+      pod-template-hash: "2336624479"
+      run: fe
+    name: fe-2336624479
+    namespace: default
+    ownerReferences:
+    - apiVersion: extensions/v1beta1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Deployment
+      name: fe
+      uid: aa8143a9-86e3-11e7-97b1-0800270d2ab4
+    resourceVersion: "321092"
+    selfLink: /apis/extensions/v1beta1/namespaces/default/replicasets/fe-2336624479
+    uid: aa81a5db-86e3-11e7-97b1-0800270d2ab4
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        pod-template-hash: "2336624479"
+        run: fe
+    template:
+      metadata:
+        creationTimestamp: null
+        labels:
+          pod-template-hash: "2336624479"
+          run: fe
+      spec:
+        containers:
+        - image: gcr.io/cafejournal-1031/fe:latest
+          imagePullPolicy: Always
+          name: fe
+          ports:
+          - containerPort: 80
+            protocol: TCP
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+        dnsPolicy: ClusterFirst
+        restartPolicy: Always
+        schedulerName: default-scheduler
+        securityContext: {}
+        terminationGracePeriodSeconds: 30
+  status:
+    availableReplicas: 1
+    fullyLabeledReplicas: 1
+    observedGeneration: 1
+    readyReplicas: 1
+    replicas: 1
+- apiVersion: v1
+  kind: Node
+  metadata:
+    annotations:
+      node.alpha.kubernetes.io/ttl: "0"
+      volumes.kubernetes.io/controller-managed-attach-detach: "true"
+    creationTimestamp: 2017-06-20T18:28:19Z
+    labels:
+      beta.kubernetes.io/arch: amd64
+      beta.kubernetes.io/os: linux
+      kubernetes.io/hostname: minikube
+    name: minikube
+    namespace: ""
+    resourceVersion: "323178"
+    selfLink: /api/v1/nodesminikube
+    uid: 3bb317d6-55e6-11e7-a7cd-0800270d2ab4
+  spec:
+    externalID: minikube
+  status:
+    addresses:
+    - address: 192.168.99.100
+      type: LegacyHostIP
+    - address: 192.168.99.100
+      type: InternalIP
+    - address: minikube
+      type: Hostname
+    allocatable:
+      cpu: "2"
+      memory: 1946084Ki
+      pods: "110"
+    capacity:
+      cpu: "2"
+      memory: 2048484Ki
+      pods: "110"
+    conditions:
+    - lastHeartbeatTime: 2017-08-22T03:14:37Z
+      lastTransitionTime: 2017-07-06T13:40:52Z
+      message: kubelet has sufficient disk space available
+      reason: KubeletHasSufficientDisk
+      status: "False"
+      type: OutOfDisk
+    - lastHeartbeatTime: 2017-08-22T03:14:37Z
+      lastTransitionTime: 2017-07-06T13:40:52Z
+      message: kubelet has sufficient memory available
+      reason: KubeletHasSufficientMemory
+      status: "False"
+      type: MemoryPressure
+    - lastHeartbeatTime: 2017-08-22T03:14:37Z
+      lastTransitionTime: 2017-07-06T13:40:52Z
+      message: kubelet has no disk pressure
+      reason: KubeletHasNoDiskPressure
+      status: "False"
+      type: DiskPressure
+    - lastHeartbeatTime: 2017-08-22T03:14:37Z
+      lastTransitionTime: 2017-07-06T13:40:52Z
+      message: kubelet is posting ready status
+      reason: KubeletReady
+      status: "True"
+      type: Ready
+    daemonEndpoints:
+      kubeletEndpoint:
+        Port: 10250
+    images:
+    - names:
+      - gcr.io/cafejournal-1031/be:latest
+      sizeBytes: 761572480
+    - names:
+      - gcr.io/cafejournal-1031/fe:latest
+      sizeBytes: 454410378
+    - names:
+      - gcr.io/google_containers/kubernetes-dashboard-amd64:v1.6.1
+      sizeBytes: 134353887
+    - names:
+      - gcr.io/google-containers/kube-addon-manager:v6.4-beta.1
+      sizeBytes: 127217136
+    - names:
+      - gcr.io/google_containers/k8s-dns-kube-dns-amd64:1.14.2
+      sizeBytes: 52356750
+    - names:
+      - gcr.io/google_containers/k8s-dns-dnsmasq-nanny-amd64:1.14.2
+      sizeBytes: 44844722
+    - names:
+      - gcr.io/google_containers/k8s-dns-sidecar-amd64:1.14.2
+      sizeBytes: 44503071
+    - names:
+      - gcr.io/google_containers/pause-amd64:3.0
+      sizeBytes: 746888
+    nodeInfo:
+      architecture: amd64
+      bootID: fe6148dd-67c8-4251-aa6d-94c60347dbaa
+      containerRuntimeVersion: docker://1.11.1
+      kernelVersion: 4.7.2
+      kubeProxyVersion: v1.6.4
+      kubeletVersion: v1.6.4
+      machineID: 4f45cc655783420ba24027a71dc5a2cb
+      operatingSystem: linux
+      osImage: Buildroot 2016.08
+      systemUUID: FCAA8354-CF6B-48E8-91A5-B742CA705F95
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
