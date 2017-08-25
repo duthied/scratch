@@ -38,17 +38,7 @@ post '/shortcode' do
 		@shortcode = random_string 5
 		redis.setnx "links:#{@shortcode}", params[:url]
 	end
-	erb :index
-end
-
-get '/shortcode/:shortcode' do
-	@host_with_port = request.host_with_port
-	@url = redis.get "links:#{params[:shortcode]}"
-	redirect @url || '/'
-end
-
-get '/lookup' do
-	erb :lookup
+	erb :shortcode
 end
 
 post '/lookup' do
@@ -56,3 +46,8 @@ post '/lookup' do
 	erb :lookup
 end
 
+get '/shortcode/:shortcode' do
+	@host_with_port = request.host_with_port
+	@url = redis.get "links:#{params[:shortcode]}"
+	redirect @url || '/'
+end

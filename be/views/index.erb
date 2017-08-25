@@ -6,17 +6,20 @@
 </head>
 <body>
     <div class="container">
+
         <h1>shortlink it</h1>
         <form method="post" action="/shortcode">
             <input type="text" value="<%= h(params[:url]) %>" name="url" id="url" />
             <input type="submit" value="shorten" id="submit" />
         </form>
         <div class="clear"></div>
-        <% if @shortcode %>
-        <div class="result">
-            Your shortened URL is:
-            <a href="http://<%= @host_with_port %>/<%= @shortcode %>">http://<%= @host_with_port %>/<%= @shortcode %></a>
-        </div>
-        <% end %>
+
+        <h1>lookup shortlink</h1>
+        <form method="post" action="/lookup">
+            <input type="text" value="<%= h(params[:url]) %>" name="url" id="url" />
+            <input type="submit" value="lookup" id="submit" />
+        </form>
+        <div class="clear"></div>
+
     </div>
 </body>

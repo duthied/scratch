@@ -7,21 +7,16 @@
 <body>
     <div class="container">
 
-        <% if @url %>
+        <% if @shortcode %>
         <div class="result">
-            I found this:
-            <a href="<%= @url %>">http://<%= @url %></a>
-        </div>
-        <% else %>
-
-        <div class="result">
-            no results
+            Your shortened URL is:
+            <a href="http://<%= @host_with_port %>/<%= @shortcode %>">http://<%= @host_with_port %>/<%= @shortcode %></a>
         </div>
         <% end %>
 
         <div>
             <a href="/">&lt; back<a>
         </div>
-
+        
     </div>
 </body>
